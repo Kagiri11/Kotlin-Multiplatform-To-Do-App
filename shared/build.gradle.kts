@@ -28,7 +28,7 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
+        sourceSets["commonMain"].dependencies {
             implementation(libs.androidx.datastore)
             implementation(libs.androidx.datastore.preferences.core)
 
