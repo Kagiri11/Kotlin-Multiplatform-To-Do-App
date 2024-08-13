@@ -15,17 +15,6 @@ kotlin {
             }
         }
     }
-    
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "shared"
-            isStatic = true
-        }
-    }
 
     sourceSets {
         sourceSets["commonMain"].dependencies {
@@ -43,6 +32,9 @@ kotlin {
             implementation(libs.sqlite.bundled)
 
             api(libs.koin.core)
+            api(libs.koin.android)
+            api(libs.koin.androidx.compose)
+
             implementation(libs.kotlin.coroutines.core)
             implementation(libs.koin.composeVM)
         }
