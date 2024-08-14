@@ -29,6 +29,7 @@ kotlin {
             implementation(compose.components.resources)
 
             implementation(libs.material3.window.size)
+            implementation(libs.navigation.compose)
 
             implementation(libs.room.runtime)
             implementation(libs.sqlite.bundled)

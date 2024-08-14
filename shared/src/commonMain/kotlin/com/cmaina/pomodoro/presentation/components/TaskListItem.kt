@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -16,12 +17,13 @@ import com.cmaina.pomodoro.presentation.ui.theme.Grey
 fun TaskListItem(title: String) {
     Card(
         modifier = Modifier.fillMaxWidth()
-            .height(80.dp)
-            .background(Grey),
-        backgroundColor = Grey
+            .height(80.dp),
+        backgroundColor = Grey,
+        shape = RoundedCornerShape(10),
+        elevation = 10.dp
     ) {
-        Box(modifier = Modifier.fillMaxSize()) {
+        /*Box(modifier = Modifier.fillMaxSize()) {
             Text(text = title)
-        }
+        }*/
     }
 }
