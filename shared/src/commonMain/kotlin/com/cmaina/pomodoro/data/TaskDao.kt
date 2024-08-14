@@ -13,12 +13,12 @@ interface TaskDao {
     suspend fun addTask(task: Task)
 
     @Query("SELECT * FROM tasks")
-    suspend fun getAllTasks(): Flow<List<Task>>
+    fun getAllTasks(): Flow<List<Task>>
 
     @Query("SELECT * FROM tasks WHERE id = :id")
     suspend fun getTaskById(id: Long): Task?
 
-    @Query("DELETE FROM tasks WHERE id = :id")
+    @Query("DELETE FROM tasks WHERE id = :taskId")
     suspend fun deleteTask(taskId: Long)
 
 }

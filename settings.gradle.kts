@@ -16,4 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Pomodoro"
 include(":androidApp")
+include(":desktopApp")
 include(":shared")

@@ -1,4 +1,4 @@
-plugins {
+ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.composeMultiplatform)
@@ -16,6 +16,8 @@ kotlin {
         }
     }
 
+    jvm("desktop")
+
     sourceSets {
         sourceSets["commonMain"].dependencies {
             implementation(libs.androidx.datastore)
@@ -31,15 +33,18 @@ kotlin {
             implementation(libs.room.runtime)
             implementation(libs.sqlite.bundled)
 
+
             api(libs.koin.core)
-            api(libs.koin.android)
-            api(libs.koin.androidx.compose)
 
             implementation(libs.kotlin.coroutines.core)
             implementation(libs.koin.composeVM)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+        sourceSets["desktopMain"].dependencies {
+            implementation(libs.kotlin.coroutines.core)
+            implementation(libs.kotlinx.coroutines.swing)
         }
     }
 }

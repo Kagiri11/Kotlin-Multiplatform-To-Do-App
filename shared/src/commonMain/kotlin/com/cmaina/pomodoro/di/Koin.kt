@@ -11,5 +11,4 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) =
 
 fun initKoin() = initKoin {}
 
-fun appModules() =
-    listOf(sharedModule, platformModule())
+fun appModules() = listOf(sharedModule, platformModule())
